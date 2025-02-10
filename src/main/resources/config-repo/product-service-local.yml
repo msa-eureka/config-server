@@ -1,4 +1,18 @@
+spring:
+  application:
+    name: product-service
 server:
   port: 19083
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:19090/eureka/
 
+management:
+  zipkin:
+    tracing:
+      endpoint: "http://localhost:9411/api/v2/spans"
+  tracing:
+    sampling:
+      probability: 1.0 # 1.0: 모든걸 대상으로(default: 0.1)
 message: "product-service-local message update"
